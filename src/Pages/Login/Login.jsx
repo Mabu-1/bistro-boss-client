@@ -101,7 +101,7 @@ const Login = () => {
               </div>
               <div className="form-control mt-6 ">
 
-                <input disabled={false} className="btn bg-yellow-600 text-white" type="submit" value="Sign In" />
+                <input disabled={disabled} className="btn bg-yellow-600 text-white" type="submit" value="Sign In" />
               </div>
             </form>
             <div className='flex justify-center  text-yellow-600'>

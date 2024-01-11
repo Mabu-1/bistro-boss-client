@@ -1,25 +1,30 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import './index.css'
 import {
   RouterProvider,
 } from "react-router-dom";
-import './index.css'
 import { router } from './Router/Routes';
-import {  HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider } from 'react-helmet-async';
+
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 import AuthProvider from './Providers/AuthProvider';
 
-
+const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <AuthProvider>
-   <HelmetProvider >
-    <div className='max-w-screen-xl mx-auto'>
-       <RouterProvider router={router} />
-       </div>
-  </HelmetProvider>
-   </AuthProvider>
-       
-
+    <AuthProvider>
+      <QueryClientProvider client={queryClient}>
+        <HelmetProvider>
+          <div className='max-w-screen-xl mx-auto'>
+            <RouterProvider router={router} />
+          </div>
+        </HelmetProvider>
+      </QueryClientProvider>
+    </AuthProvider>
   </React.StrictMode>,
 )
