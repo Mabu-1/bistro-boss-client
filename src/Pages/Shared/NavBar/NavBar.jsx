@@ -22,7 +22,7 @@ const handleLogOut = () => {
         <li><Link to="/order/salad">Order Food</Link></li>
      
         <li className="mt-[-9px]"> 
-            <Link to="/">
+            <Link to="/dashboard/cart">
                 <button className="btn">
                     <FaShoppingCart className="mr-2"></FaShoppingCart>
                     <div className="badge badge-secondary">+{cart.length}</div>
